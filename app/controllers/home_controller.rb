@@ -4,8 +4,10 @@ class HomeController < ApplicationController
       redirect_to login_path
     elsif admin_login?
       @homeForm = 'admin'
-    else
+      @logs = Log.all
+    elsif logged_in?
       @homeForm = 'user'
+      @logs = Log.where(user_id: session[:user_id])
     end
   end
 

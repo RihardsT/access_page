@@ -30,6 +30,8 @@ User.create!(
   level: 2
 )
 
-Log.create!(
-  user_id: 1
-)
+for i in 0..10 do
+  Log.create!(
+    user_id: rand(2) + 1 
+  )
+end

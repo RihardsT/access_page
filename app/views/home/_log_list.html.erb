@@ -1,0 +1,9 @@
+<ul>
+  <% @logs.each do |log| %>
+    <li>
+      <%= log.created_at %>
+      <%= log.user_id %>
+      <%= User.find(log.user_id).name %>
+    </li>
+  <% end %>
+</ul>

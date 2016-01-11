@@ -1,1 +1,5 @@
-<p>Admin view</p>
+<% provide(:title, 'Admin view') %>
+
+<%= link_to "Lietotāji", users_path %>
+
+<%= render 'log_list' %>
