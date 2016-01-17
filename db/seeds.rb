@@ -46,7 +46,7 @@ for i in 0..10 do
     user_id: rand(7) + 1,
     timeopen: time,
     timeclose: time + 60,
-    action: rand(2) + 1,
+    action: rand(2),
     reason: ['No ID', 'No time', 'Banned', 'Expired', 'User revoked'].sample
   )
 end

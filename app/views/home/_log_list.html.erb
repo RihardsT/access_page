@@ -1,9 +1,13 @@
 <ul>
   <% @logs.each do |log| %>
     <li>
-      <%= log.created_at %>
+      <%= log.timeopen %>
+      <%= log.timeclose %>
       <%= log.user_id %>
-      <%= User.find(log.user_id).name %>
+      <%= User.find(log.user_id).email %>
+      <%= User.find(log.user_id).level %>
+      <%= log.action == 1 ? 'Yes' : 'No' %>
+      <%= log.reason %>
     </li>
   <% end %>
 </ul>
