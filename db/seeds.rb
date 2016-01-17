@@ -9,29 +9,44 @@ User.create!(
   name: 'admin',
   surname: 'admin',
   person_code: '123456-12345',
+  email: 'admin@admin.com',
+  phone: Faker::PhoneNumber.cell_phone,
+  card_id: '01',
   password: 'password',
   password_confirmation: 'password',
   level: 0
 )
 User.create!(
-  name: 'user',
-  surname: 'user',
-  person_code: '123456-12340',
-  password: 'password',
-  password_confirmation: 'password',
-  level: 1
-)
-User.create!(
-  name: 'guest',
-  surname: 'guest',
+  name: 'log',
+  surname: 'log',
   person_code: '123456-00000',
+  email: 'log@admin.com',
+  phone: Faker::PhoneNumber.cell_phone,
+  card_id: '03',
   password: 'password',
   password_confirmation: 'password',
   level: 2
 )
+for i in 0..5 do
+  User.create!(
+    name: Faker::Name.first_name,
+    surname: Faker::Name.last_name,
+    email: Faker::Internet.email,
+    card_id: Faker::Number.number(10),
+    level: 1,
+    password: 'password',
+    password_confirmation: 'password',
+    person_code: '123456-12340'
+  )
+end
 
 for i in 0..10 do
+  time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
   Log.create!(
-    user_id: rand(2) + 1 
+    user_id: rand(7) + 1,
+    timeopen: time,
+    timeclose: time + 60,
+    action: rand(2) + 1,
+    reason: ['No ID', 'No time', 'Banned', 'Expired', 'User revoked'].sample
   )
 end
