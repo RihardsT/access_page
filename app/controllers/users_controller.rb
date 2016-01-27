@@ -5,6 +5,10 @@ class UsersController < ApplicationController
     elsif admin_login?
       @form = 'admin'
       @users = User.all
+    elsif logged_in?
+      redirect_to user
+      @form = 'user'
+      @users = User.find(session[:user_id])
     end
   end
 
@@ -12,6 +16,8 @@ class UsersController < ApplicationController
   end
 
   def show
+    @users = []
+    @users << User.find(params[:id])
   end
 
   def edit

@@ -36,17 +36,24 @@ for i in 0..5 do
     level: 1,
     password: 'password',
     password_confirmation: 'password',
-    person_code: '123456-12340'
+    person_code: '123456-12340',
+    phone: Faker::PhoneNumber.cell_phone
   )
 end
 
 for i in 0..10 do
   time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
+  action = rand(2)
+  if action == 1
+    reason = 'Good'
+  else
+    reason = ['No ID', 'No time', 'Banned', 'Expired', 'User revoked'].sample
+  end
   Log.create!(
     user_id: rand(7) + 1,
     timeopen: time,
     timeclose: time + 60,
-    action: rand(2),
-    reason: ['No ID', 'No time', 'Banned', 'Expired', 'User revoked'].sample
+    action: action,
+    reason: reason
   )
 end

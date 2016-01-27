@@ -1,0 +1,29 @@
+<table>
+  <thead>
+    <tr>
+      <th> </th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Person code</th>
+      <th>Level</th>
+      <th>E-mail</th>
+      <th>Phone number</th>
+      <th>Card ID</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @users.each do |user| %>
+        <tr>
+          <td> <%= link_to "User", user %> </td>
+          <td>  <%= user.name %> </td>
+          <td>  <%= user.surname %> </td>
+          <td>  <%= user.person_code %> </td>
+          <td>  <%= user.level %> </td>
+          <td>  <%= user.email %> </td>
+          <td>  <%= user.phone %> </td>
+          <td>  <%= user.card_id %> </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

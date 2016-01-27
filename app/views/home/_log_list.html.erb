@@ -1,13 +1,25 @@
-<ul>
-  <% @logs.each do |log| %>
-    <li>
-      <%= log.timeopen %>
-      <%= log.timeclose %>
-      <%= log.user_id %>
-      <%= User.find(log.user_id).email %>
-      <%= User.find(log.user_id).level %>
-      <%= log.action == 1 ? 'Yes' : 'No' %>
-      <%= log.reason %>
-    </li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Opened</th>
+      <th>Closed</th>
+      <th>Name</th>
+      <th>Surname</th>
+      <th>Action</th>
+      <th>Reason</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @logs.each do |log| %>
+        <tr>
+          <td>  <%= log.timeopen %> </td>
+          <td>  <%= log.timeclose %> </td>
+          <td>  <%= User.find(log.user_id).name %> </td>
+          <td>  <%= User.find(log.user_id).surname %> </td>
+          <td>  <%= log.action == 1 ? 'Yes' : 'No' %> </td>
+          <td>  <%= log.reason %> </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>
