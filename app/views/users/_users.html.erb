@@ -1,7 +1,7 @@
-<table>
+<table class="table table-bordered table-condensed">
   <thead>
     <tr>
-      <th> </th>
+      <th> # </th>
       <th>Name</th>
       <th>Surname</th>
       <th>Person code</th>
@@ -13,16 +13,16 @@
   </thead>
 
   <tbody>
-      <% @users.each do |user| %>
+      <% @users.each_with_index do |user, index| %>
         <tr>
-          <td> <%= link_to "User", user %> </td>
-          <td>  <%= user.name %> </td>
-          <td>  <%= user.surname %> </td>
-          <td>  <%= user.person_code %> </td>
-          <td>  <%= user.level %> </td>
-          <td>  <%= user.email %> </td>
-          <td>  <%= user.phone %> </td>
-          <td>  <%= user.card_id %> </td>
+          <td >  <%= link_to "#{index+1}", user, class: "btn btn-default" %> </td>
+          <td >  <%= user.name %> </td>
+          <td >  <%= user.surname %> </td>
+          <td >  <%= user.person_code %> </td>
+          <td >  <%= user.level %> </td>
+          <td >  <%= user.email %> </td>
+          <td >  <%= user.phone %> </td>
+          <td >  <%= user.card_id %> </td>
         </tr>
       <% end %>
   </tbody>

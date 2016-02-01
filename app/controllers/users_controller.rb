@@ -16,8 +16,12 @@ class UsersController < ApplicationController
   end
 
   def show
+    unless admin_login?
+      redirect_to root_path
+    end
     @users = []
     @users << User.find(params[:id])
+    @logs = Log.where(user_id: params[:id])
   end
 
   def edit
