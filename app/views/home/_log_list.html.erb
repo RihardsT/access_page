@@ -1,7 +1,7 @@
 <table class="table table-bordered table-condensed">
   <thead>
     <tr>
-      <th>Go</th>
+      <th>#</th>
       <th>Name</th>
       <th>Surname</th>
       <th>Action</th>
@@ -13,12 +13,12 @@
   </thead>
 
   <tbody>
-      <% @logs.each_with_index do |log, index| %>
+      <% @logs.each do |log| %>
         <tr>
-          <td> <%= link_to "#{index+1}", user_path(log.user_id) %> </td>
+          <td> <%= link_to "Go:", user_path(log.user_id) %> </td>
           <td>  <%= User.find(log.user_id).name %> </td>
           <td>  <%= User.find(log.user_id).surname %> </td>
-          <td>  <%= log.action == 1 ? 'Yes' : 'No' %> </td>
+          <td>  <%= log.action == 1 ? 'Allow' : 'Deny' %> </td>
           <td>  <%= log.reason %> </td>
           <td>  <%= log.timeclose - log.timeopen %> </td>
           <td>  <%= log.timeopen %> </td>

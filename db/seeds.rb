@@ -47,7 +47,7 @@ for i in 0..10 do
   if action == 1
     reason = 'Good'
   else
-    reason = ['No ID', 'No time', 'Banned', 'Expired', 'User revoked'].sample
+    reason = ['Bad ID', 'Bad time', 'Banned', 'Expired', 'User revoked'].sample
   end
   Log.create!(
     user_id: rand(7) + 1,

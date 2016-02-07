@@ -3,11 +3,11 @@ class UsersController < ApplicationController
     if current_user.nil?
       redirect_to login_path
     elsif admin_login?
-      @form = 'admin'
+      @page_title = "Admin|Users"
       @users = User.all
     elsif logged_in?
+      @page_title = "User"
       redirect_to user
-      @form = 'user'
       @users = User.find(session[:user_id])
     end
   end

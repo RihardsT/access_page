@@ -1,7 +1,7 @@
 <table class="table table-bordered table-condensed">
   <thead>
     <tr>
-      <th> # </th>
+      <th>#</th>
       <th>Name</th>
       <th>Surname</th>
       <th>Person code</th>
@@ -13,9 +13,9 @@
   </thead>
 
   <tbody>
-      <% @users.each_with_index do |user, index| %>
+      <% @users.each do |user| %>
         <tr>
-          <td >  <%= link_to "#{index+1}", user %> </td>
+          <td >  <%= link_to "Go:", user %> </td>
           <td >  <%= user.name %> </td>
           <td >  <%= user.surname %> </td>
           <td >  <%= user.person_code %> </td>
