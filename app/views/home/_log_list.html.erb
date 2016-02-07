@@ -1,24 +1,28 @@
 <table class="table table-bordered table-condensed">
   <thead>
     <tr>
-      <th>Opened</th>
-      <th>Closed</th>
+      <th>Go</th>
       <th>Name</th>
       <th>Surname</th>
       <th>Action</th>
       <th>Reason</th>
+      <th>Diff</th>
+      <th>Opened</th>
+      <th>Closed</th>
     </tr>
   </thead>
 
   <tbody>
-      <% @logs.each do |log| %>
+      <% @logs.each_with_index do |log, index| %>
         <tr>
-          <td>  <%= log.timeopen %> </td>
-          <td>  <%= log.timeclose %> </td>
+          <td> <%= link_to "#{index+1}", user_path(log.user_id) %> </td>
           <td>  <%= User.find(log.user_id).name %> </td>
           <td>  <%= User.find(log.user_id).surname %> </td>
           <td>  <%= log.action == 1 ? 'Yes' : 'No' %> </td>
           <td>  <%= log.reason %> </td>
+          <td>  <%= log.timeclose - log.timeopen %> </td>
+          <td>  <%= log.timeopen %> </td>
+          <td>  <%= log.timeclose %> </td>
         </tr>
       <% end %>
   </tbody>

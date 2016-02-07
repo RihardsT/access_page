@@ -1,5 +1,8 @@
 <% if logged_in? %>
-	<%= link_to "Log out", logout_path, method: "delete", class: "btn btn-default" %>
-
-	<%= render @form %>
+	<div class="right">
+		<% unless @form.nil? %>
+			<%= render @form %>
+		<% end %>
+	</div>
 <% end %>
+<%= render 'log_list' %>

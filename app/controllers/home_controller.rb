@@ -3,10 +3,10 @@ class HomeController < ApplicationController
     if current_user.nil?
       redirect_to login_path
     elsif admin_login?
-      @form = 'admin'
+      @page_title = "Admin"
       @logs = Log.all
     elsif logged_in?
-      @form = 'user'
+      @page_title = "User"
       @logs = Log.where(user_id: session[:user_id])
     end
   end
