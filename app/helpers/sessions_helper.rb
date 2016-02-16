@@ -12,11 +12,11 @@ module SessionsHelper
 	end
 
 	def admin_login?
-		current_user.level == 0
+		current_user.level == 0 unless current_user.nil?
 	end
 
 	def user_login?
-		current_user.level == 1
+		current_user.level == 1 unless current_user.nil?
 	end
 
 	def log_out

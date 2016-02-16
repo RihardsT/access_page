@@ -27,7 +27,7 @@ User.create!(
   password_confirmation: 'password',
   level: 2
 )
-for i in 0..5 do
+5.times do
   User.create!(
     name: Faker::Name.first_name,
     surname: Faker::Name.last_name,
@@ -41,7 +41,7 @@ for i in 0..5 do
   )
 end
 
-for i in 0..10 do
+10.times do
   time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
   action = rand(2)
   if action == 1
