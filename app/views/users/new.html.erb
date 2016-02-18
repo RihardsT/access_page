@@ -1,2 +1,34 @@
-<h1>Users#new</h1>
-<p>Find me in app/views/users/new.html.erb</p>
+<% provide(:title, 'Add new user') %>
+
+<div class="form-group">
+	<%= form_for(@user) do |f| %>
+
+		<%= f.label :name %>
+		<%= f.text_field :name, class: "form-control" %>
+    <%= f.label :surname %>
+		<%= f.text_field :surname, class: "form-control" %>
+
+    <%= f.label :person_code %>
+		<%= f.text_field :person_code, class: "form-control" %>
+    <%= f.label :email %>
+		<%= f.email_field :email, class: "form-control" %>
+    <%= f.label :phone %>
+		<%= f.text_field :phone, class: "form-control" %>
+    <%= f.label :card_id %>
+		<%= f.text_field :card_id, class: "form-control" %>
+
+
+    <%= f.label :password %>
+		<%= f.password_field :password, class: "form-control" %>
+    <%= f.label :password_confirmation %>
+		<%= f.password_field :password_confirmation, class: "form-control" %>
+
+    <%= f.radio_button :level, '1', :checked => true %>
+    <%= f.label :level, 'User' %>
+    <%= f.radio_button :level, '0' %>
+    <%= f.label :level, 'Admin' %>
+    <br>
+		<%= f.submit "Create new user", class: "btn btn-default" %>
+	<% end %>
+
+</div>
