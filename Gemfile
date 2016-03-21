@@ -10,6 +10,7 @@ gem 'bcrypt', '~> 3.1.7'
 
 group :production, :postgresql do
   gem 'pg'
+  gem 'unicorn'
 end
 group :development, :test do
   gem 'spring'
