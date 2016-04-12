@@ -21,7 +21,11 @@
           <td>  <%= User.find(log.user_id).surname %> </td>
           <td>  <%= log.action == 1 ? 'Allow' : 'Deny' %> </td>
           <td>  <%= log.reason %> </td>
-          <td>  <%= log.timeclose - log.timeopen %> </td>
+        <% if log.timeclose != nil %>
+          <td> <%= log.timeclose - log.timeopen %> </td>
+        <% else %>
+          <td> <%= log.timeopen - log.timeopen %> </td>
+        <% end %>
           <td>  <%= log.timeopen %> </td>
           <td>  <%= log.timeclose %> </td>
         </tr>
