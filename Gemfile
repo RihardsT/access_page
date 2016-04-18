@@ -7,6 +7,7 @@ gem 'jquery-rails'
 gem 'jquery-tablesorter'
 gem 'jquery-turbolinks', '~> 2.1'
 gem 'bcrypt', '~> 3.1.7'
+gem 'fullcalendar-rails'
 
 group :production, :postgresql do
   gem 'pg'
