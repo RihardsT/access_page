@@ -41,7 +41,7 @@ User.create!(
   )
 end
 
-10.times do
+40.times do
   time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
   action = rand(2)
   if action == 1

@@ -1,5 +1,9 @@
 class SessionsController < ApplicationController
   def new
+    if !current_user.nil?
+      flash[:info] = "You're allready logged in"
+      redirect_to root_path
+    end
   end
 
   def create
@@ -8,8 +12,8 @@ class SessionsController < ApplicationController
       log_in user
       redirect_back_or root_url
     else
-      flash.now[:danger] = 'Invalid name/password combination'
-      render 'new'
+      flash[:danger] = 'Invalid name/password combination'
+      redirect_to login_path
     end
   end
 

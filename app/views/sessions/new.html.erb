@@ -1,6 +1,6 @@
 <% provide(:title, 'Log in') %>
 
-<div class="form-group">
+<div class="form-group col-xs-5">
 	<%= form_for(:session, url: login_path) do |f| %>
 
 		<%= f.label :name %>
@@ -11,5 +11,12 @@
 
 		<%= f.submit "Log in", class: "btn btn-default" %>
 	<% end %>
+</div>
 
+<div class="col-xs-1"> </div>
+
+<div class="col-xs-6">
+	<p>Šī ir VeA Studentu telpas piekļuves uzskaites mājaslapa.
+		Šeit var apskatīt ...
+	</p>
 </div>
