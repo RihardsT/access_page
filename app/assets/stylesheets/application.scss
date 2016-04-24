@@ -23,15 +23,6 @@ header{
   border-bottom: 3px solid $border-color;
 }
 
-footer{
-  background-color: $header_color;
-  height: 25px;
-  border-top: 3px solid $border-color;
-  .content{
-    padding-left: 30px;
-  }
-}
-
 .custom_width{
   width: 600px;
 }

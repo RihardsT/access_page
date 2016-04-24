@@ -1,6 +1,6 @@
 class SessionsController < ApplicationController
   def new
-    if !current_user.nil?
+    unless current_user.nil?
       flash[:info] = "You're allready logged in"
       redirect_to root_path
     end
