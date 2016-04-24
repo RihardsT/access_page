@@ -1,0 +1,27 @@
+<table class="table table-bordered table-condensed tablesorter">
+  <thead>
+    <tr>
+      <th>Action</th>
+      <th>Reason</th>
+      <th>Diff</th>
+      <th>Opened</th>
+      <th>Closed</th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <% @logs.each do |log| %>
+        <tr>
+          <td>  <%= log.action == 1 ? 'Allow' : 'Deny' %> </td>
+          <td>  <%= log.reason %> </td>
+        <% if log.timeclose != nil %>
+          <td> <%= log.timeclose - log.timeopen %> </td>
+        <% else %>
+          <td> <%= log.timeopen - log.timeopen %> </td>
+        <% end %>
+          <td>  <%= log.timeopen %> </td>
+          <td>  <%= log.timeclose %> </td>
+        </tr>
+      <% end %>
+  </tbody>
+</table>

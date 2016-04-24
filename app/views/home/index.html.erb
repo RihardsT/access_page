@@ -1,1 +1,21 @@
-<%= render 'log_list' %>
+<% provide(:title, "Home") %>
+<h1>Studentu telpa</h1>
+
+<div class="col-md-9">
+  <p>
+    Šī ir Ventspils Augstskolas studentu telpas piekļuves sistēmas mājaslapa.
+    Šeit tu vari apskatīt savu piekļuves <%= link_to "vēsturi", log_path %>,
+    atsaukt savu piekļuvi, ziņot par problēmam un izteikt ierosinājumus.
+  </p>
+  <p>
+    Pēdējā aktivitāte:
+  </p>
+  <div>
+    <%= render 'partial_log_list' %>
+  </div>
+</div>
+
+<div class="col-md-3">
+  Dienas bilde:
+  <img src="https://www.dropbox.com/s/02khm4tvfqi7rw5/PB060034.JPG?raw=1" alt="Pic of the day" class="pic_of_day">
+</div>
