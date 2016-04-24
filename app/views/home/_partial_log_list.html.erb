@@ -1,6 +1,9 @@
 <table class="table table-bordered table-condensed tablesorter">
   <thead>
     <tr>
+      <% if admin_login? %>
+        <th>Surname</th>
+      <% end %>
       <th>Action</th>
       <th>Reason</th>
       <th>Diff</th>
@@ -12,6 +15,9 @@
   <tbody>
       <% @logs.each do |log| %>
         <tr>
+          <% if admin_login? %>
+            <td> <%= link_to User.find(log.user_id).surname, user_path(log.user_id) %> </td>
+          <% end %>
           <td>  <%= log.action == 1 ? 'Allow' : 'Deny' %> </td>
           <td>  <%= log.reason %> </td>
         <% if log.timeclose != nil %>
