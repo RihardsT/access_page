@@ -3,6 +3,8 @@
     <div class="right">
       <% if logged_in? %>
         <%= link_to "Home", root_path, class: "btn btn-default" %>
+        <%= link_to "Suggestions", box_index_path(cat: 0), class: "btn btn-default" %>
+        <%= link_to "Issues", box_index_path(cat: 1), class: "btn btn-default" %>
         <% if admin_login? %>
           <%= link_to "Log", log_path, class: "btn btn-default" %>
           <%= link_to "Users", users_path, class: "btn btn-default" %>
