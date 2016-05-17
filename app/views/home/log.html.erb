@@ -1,3 +1,9 @@
 <% provide(:title, "Logs") %>
 
+Limit:
+<%= link_to "Last 10", log_path(limit: 10), class: "btn btn-default" %>
+<%= link_to "Last 20", log_path(limit: 20), class: "btn btn-default" %>
+<%= link_to "Last 50", log_path(limit: 50), class: "btn btn-default" %>
+<%= link_to "All", log_path(limit: 0), class: "btn btn-default" %>
+
 <%= render 'full_log_list' %>

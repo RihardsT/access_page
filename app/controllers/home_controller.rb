@@ -13,7 +13,10 @@ class HomeController < ApplicationController
     if current_user.nil?
       redirect_to login_path
     elsif admin_login?
-      @logs = Log.all
+      @logs = params[:limit].nil? ? Log.last(10) : Log.last(params[:limit])
+      if params[:limit] == '0'
+        @logs = Log.all
+      end
     elsif logged_in?
       @logs = Log.where(user_id: session[:user_id])
     end
