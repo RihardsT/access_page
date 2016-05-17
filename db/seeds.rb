@@ -57,3 +57,15 @@ end
     reason: reason
   )
 end
+
+count = 0
+10.times do
+  time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
+  Box.create(
+  category: count > 4 ? 0 : 1,
+  title: Faker::Book.title,
+  email: Faker::Internet.email,
+  content: Faker::Lorem.paragraph(10)
+  )
+  count += 1
+end

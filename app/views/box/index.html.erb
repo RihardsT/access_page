@@ -1,19 +1,22 @@
 <% provide_category_name(params[:cat]) %>
 
-<h1>Box#index</h1>
-<p>Find me in app/views/box/index.html.erb</p>
+<% if params[:cat] == '0' %>
+<h2>Ieteikumi</h2>
+<% else %>
+<h2>Sūdzības</h2>
+<% end %>
 
 <% @box_items.each do |box_item| %>
   <li>
     <%= link_to box_item.title, box_path(box_item, cat: params[:cat]) %>
+    <i>
+      <%= box_item.created_at.to_s[0..10] %>
+    </i>
     <% if logged_in? %>
       <%= link_to "delete", box_item, method: :delete,
                                      data: { confirm: "You sure?" } %>
       <%= link_to "edit"  , edit_box_path(box_item, cat: params[:cat]) %>
     <% end %>
-    <i>
-      <%= box_item.created_at.to_s[0..10] %>
-    </i>
     <%= simple_format(box_item.content) %>
   </li>
 <% end %>

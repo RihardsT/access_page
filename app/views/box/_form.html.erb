@@ -1,11 +1,11 @@
-<div>
+<div class="form-group">
 	<%= form_for(@box_item) do |f| %>
 		<%= render 'layouts/error_messages', object: f.object %>
 		<%= f.label :title %>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, class: "form-control"  %>
 
 		<%= f.label :content %>
-		<%= f.text_area :content, class: 'text_form' %>
+		<%= f.text_area :content, class: 'form-control' %>
 		<% if params[:cat] %>
 			<%= f.hidden_field :category_id, {:value => params[:cat]} %>
 		<% end %>
