@@ -17,7 +17,7 @@ class BoxItemsController < ApplicationController
 
   def update
 		@box_item = BoxItem.find(params[:id])
- 		if @box_item.update_attributes(box_item_params)
+		if @box_item.update_attributes(box_item_params)
 			redirect_to @box_item
 		else
 			render 'edit'

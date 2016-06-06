@@ -60,7 +60,7 @@ end
 
 count = 0
 10.times do
-  time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
+  # time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
   Box.create(
   category: count > 4 ? 0 : 1,
   title: Faker::Book.title,

@@ -1,2 +1,7 @@
+<% if params[:cat] == '0' %>
+<h3>Jauna ieteikuma pieteikums</h3>
+<% elsif params[:cat] == '1' %>
+<h3>Jaunas problēmas pieteikums</h3>
+<% end %>
 
 <%= render 'form' %>

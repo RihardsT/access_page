@@ -2,8 +2,10 @@
 
 <% if params[:cat] == '0' %>
 <h2>Ieteikumi</h2>
+<h4><%= link_to "Pievienot jaunu ierakstu", new_box_item_path(cat: 0) %></h4>
 <% else %>
-<h2>Sūdzības</h2>
+<h2>Problēmas</h2>
+<h4><%= link_to "Pievienot jaunu ierakstu", new_box_item_path(cat: 1) %></h4>
 <% end %>
 
 <% @box_items.each do |box_item| %>
@@ -12,7 +14,7 @@
     <i>
       <%= box_item.created_at.to_s[0..10] %>
     </i>
-    <% if logged_in? %>
+    <% if admin_login? %>
       <%= link_to "delete", box_item, method: :delete,
                                      data: { confirm: "You sure?" } %>
       <%= link_to "edit"  , edit_box_item_path(box_item, cat: params[:cat]) %>
