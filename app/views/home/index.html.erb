@@ -5,7 +5,7 @@
   <p>
     Šī ir Ventspils Augstskolas studentu telpas piekļuves sistēmas mājaslapa.
     Šeit tu vari apskatīt savu piekļuves <%= link_to "vēsturi", log_path %>,
-    atsaukt savu piekļuvi, ziņot par problēmam un izteikt ierosinājumus.
+    atsaukt savu piekļuvi, ziņot par <%= link_to "problēmam", new_box_item_path(cat: 0) %> un izteikt <%= link_to "ierosinājumus", new_box_item_path(cat: 1) %>.
   </p>
   <p>
     Pēdējā aktivitāte:

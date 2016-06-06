@@ -11,9 +11,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160425183313) do
+ActiveRecord::Schema.define(version: 20160606205242) do
 
-  create_table "boxes", force: :cascade do |t|
+  create_table "box_items", force: :cascade do |t|
     t.integer  "category"
     t.string   "email"
     t.text     "content"
