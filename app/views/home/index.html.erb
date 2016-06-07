@@ -5,7 +5,7 @@
   <p>
     Šī ir Ventspils Augstskolas studentu telpas piekļuves sistēmas mājaslapa.
     Šeit tu vari apskatīt savu piekļuves <%= link_to "vēsturi", log_path %>,
-    atsaukt savu piekļuvi, ziņot par <%= link_to "problēmam", new_box_item_path(cat: 0) %> un izteikt <%= link_to "ierosinājumus", new_box_item_path(cat: 1) %>.
+    atsaukt savu piekļuvi, ziņot par <%= link_to "problēmām", new_box_item_path(cat: 0) %> un izteikt <%= link_to "ierosinājumus", new_box_item_path(cat: 1) %>.
   </p>
   <p>
     Pēdējā aktivitāte:
@@ -18,4 +18,5 @@
 <div class="col-md-3">
   Dienas bilde:
   <img src="https://www.dropbox.com/s/02khm4tvfqi7rw5/PB060034.JPG?raw=1" alt="Pic of the day" class="img-responsive img-thumbnail">
+  <%= image_tag "logo.png", class: "img-responsive img-thumbnail" %>
 </div>
