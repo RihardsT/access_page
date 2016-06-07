@@ -35,9 +35,17 @@ class UsersController < ApplicationController
   def edit
   end
 
+  def change_status
+    user = User.find(params[:user])
+    user.status_id = params[:status]
+    user.save
+    redirect_back_or users_path
+  end
+
   private
   def user_params
-    params.require(:user).permit(:name, :surname, :person_code, :email, :phone, :card_id, :password, :password_confirmation, :level)
+    params.require(:user).permit(:name, :surname, :person_code, :email, :phone,
+      :card_id, :password, :password_confirmation, :level, :status_id)
   end
 
 end

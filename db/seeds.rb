@@ -5,6 +5,11 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+Status.create!(name: 'Good')
+Status.create!(name: 'Banned')
+Status.create!(name: 'Expired')
+Status.create!(name: 'User revoked')
+
 User.create!(
   name: 'admin',
   surname: 'admin',
@@ -14,7 +19,8 @@ User.create!(
   card_id: '01',
   password: 'password',
   password_confirmation: 'password',
-  level: 0
+  level: 0,
+  status_id: 1
 )
 User.create!(
   name: 'log',
@@ -25,7 +31,8 @@ User.create!(
   card_id: '03',
   password: 'password',
   password_confirmation: 'password',
-  level: 2
+  level: 2,
+  status_id: 1
 )
 5.times do
   User.create!(
@@ -37,7 +44,8 @@ User.create!(
     password: 'password',
     password_confirmation: 'password',
     person_code: '123456-12340',
-    phone: Faker::PhoneNumber.cell_phone
+    phone: Faker::PhoneNumber.cell_phone,
+    status_id: [1,2,3,4].sample
   )
 end
 
@@ -61,7 +69,7 @@ end
 count = 0
 10.times do
   # time = Faker::Time.between(2.days.ago, Time.now, :afternoon)
-  Box.create(
+  BoxItem.create(
   category: count > 4 ? 0 : 1,
   title: Faker::Book.title,
   email: Faker::Internet.email,

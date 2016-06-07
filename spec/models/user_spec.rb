@@ -12,4 +12,5 @@ RSpec.describe User, type: :model do
   it { should validate_presence_of(:card_id) }
   it { should validate_presence_of(:password_digest) }
   it { should validate_presence_of(:level) }
+  it { should validate_presence_of(:status_id) }
 end

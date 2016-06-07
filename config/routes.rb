@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   post    'login'   =>  'sessions#create'
   delete  'logout'  =>  'sessions#destroy'
   post    'open'    =>  'reader#open'
+  post    'change_status' => 'users#change_status'
   resources :users
   resources :box_items
 

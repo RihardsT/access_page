@@ -1,1 +1,15 @@
+<!-- TODO: This is probably no good, so needs rethinking and rework  -->
+<h3>
+User status: <%= Status.find(User.find(params[:id]).status_id).name %>
+  <% if admin_login? %>
+    <%= link_to "Ban User", change_status_path(status: 2, user: params[:id]),
+      method: :post, class: "btn btn-default" %>
+    <%= link_to "Unban User", change_status_path(status: 1, user: params[:id]),
+      method: :post, class: "btn btn-default" %>
+    <% else %>
+      <%= link_to "Revoke", change_status_path(status: 4, user: params[:id]),
+        method: :post, class: "btn btn-default" %>
+  <% end %>
+</h3>
+
 <%= render 'home/full_log_list' %>
