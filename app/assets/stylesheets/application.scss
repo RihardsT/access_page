@@ -23,6 +23,11 @@ header{
   border-bottom: 3px solid $border-color;
 }
 
+textarea{
+  resize:vertical;
+  min-height: 150px;
+}
+
 .custom_width{
   width: 600px;
 }

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   delete  'logout'  =>  'sessions#destroy'
   post    'open'    =>  'reader#open'
   resources :users
+  resources :box_items
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

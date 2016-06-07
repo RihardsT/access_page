@@ -11,7 +11,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160117180958) do
+ActiveRecord::Schema.define(version: 20160606205242) do
+
+  create_table "box_items", force: :cascade do |t|
+    t.integer  "category"
+    t.string   "email"
+    t.text     "content"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "title"
+  end
 
   create_table "logs", force: :cascade do |t|
     t.integer  "user_id"

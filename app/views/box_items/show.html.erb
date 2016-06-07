@@ -1,0 +1,9 @@
+<h2><%= @box_item.title %></h2>
+<%= @box_item.created_at.to_s[0..10] %>
+<br />
+<% if logged_in? %>
+  <%= link_to "delete", @box_item, method: :delete, data: { confirm: "You sure?" } %>
+  <%= link_to "edit"  , edit_box_item_path(@box_item, cat: params[:cat]) %>
+<% end %>
+
+<%= simple_format(@box_item.content) %>
